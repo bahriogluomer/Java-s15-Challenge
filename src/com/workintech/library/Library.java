@@ -42,7 +42,6 @@ public class Library {
             return;
         }
         publications.add(publication);
-        System.out.println("Publication added");
     }
 
     public void deletePublication (long publication_ID) {
@@ -154,15 +153,7 @@ public class Library {
         return null;
     }
 
-    public void getPublicationByAuthor(String fullName) {
-        for(Publication publication : publications) {
-            if(publication.getAuthor().getFullName().equalsIgnoreCase(fullName)) {
-                System.out.println(publication);
-                return;
-            }
-        }
-        System.out.println("No publication found");
-    }
+
 
     public Publication getPublicationByPublication_ID(long publication_ID) {
         for(Publication publication : publications) {

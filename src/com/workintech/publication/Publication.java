@@ -54,6 +54,10 @@ public class Publication {
         return title;
     }
 
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
     public double getPrice() {
         return price;
     }
@@ -74,9 +78,7 @@ public class Publication {
         this.publication_ID = publication_ID;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
+
 
     public void setTitle(String title) {
         this.title = title;
@@ -109,7 +111,7 @@ public class Publication {
 
     @Override
     public String toString() {
-        return "Publication [author=" + author + ", dateOfPurchase=" + dateOfPurchase.toString() + ", edition=" + edition
+        return "Publication [author=" + getAuthor() + ", dateOfPurchase=" + dateOfPurchase.toString() + ", edition=" + edition
                 + ", price=" + price + ", publication_ID=" + publication_ID + ", status=" + status
                 + ", title=" + title + "]";
     }

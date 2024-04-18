@@ -12,7 +12,9 @@ abstract class Person {
        return fullName;
    }
 
-
+   public void setFullName(String fullName) {
+       this.fullName = fullName;
+   }
 
    public abstract void whoYouAre();
 

@@ -26,6 +26,7 @@ public class Main {
         Author author5 = new Author("Charles Darwin");
         Author author6 = new Author("George R. R. Martin");
         Author author7 = new Author("Andrzej Sapkowski");
+        Author author8 = new Author("Yunus cengel");
 
         Publication publication1 = new Publication( author1, "1984", 10.99, Category.FICTION, 2,LocalDate.of(2020, 10, 25));
         Publication publication2 = new Publication( author2, "Harry Potter and the Philosopher's Stone", 9.99, Category.FICTION,  3, LocalDate.of(2018, 11, 16));
@@ -35,6 +36,7 @@ public class Main {
         Publication publication6 = new Publication( author6, "Game of Thrones", 14.99, Category.FICTION,  2, LocalDate.of(2010, 1, 1));
         Publication publication7 = new Publication(author7, "Lady of the Lake", 14.99, Category.FICTION,  2, LocalDate.of(2010, 1, 1));
         Publication publication8 = new Publication(author7, "Blood of Elves", 14.99, Category.FICTION,  2, LocalDate.of(2010, 1, 1));
+        Publication publication9 = new Publication(author8, "Thermodynamics", 25.99, Category.TEXTBOOK,  2, LocalDate.of(2016, 4, 5));
 
         library.addPublication(publication1);
         library.addPublication(publication2);
@@ -44,6 +46,7 @@ public class Main {
         library.addPublication(publication6);
         library.addPublication(publication7);
         library.addPublication(publication8);
+        library.addPublication(publication9);
 
         author1.addPublication(publication1);
         author2.addPublication(publication2);
@@ -53,6 +56,7 @@ public class Main {
         author6.addPublication(publication6);
         author7.addPublication(publication7);
         author7.addPublication(publication8);
+        author8.addPublication(publication9);
 
 
 
@@ -108,8 +112,10 @@ public class Main {
 
                     LocalDate publicationDate = LocalDate.parse(scanner.next());
                     Publication newPublication = new Publication(newAuthor, publicationName, publicationPrice, Category.valueOf(publicationCategory), publicationEdition, publicationDate);
+                    newPublication.setAuthor(newAuthor);
                     newAuthor.addPublication(newPublication);
                     library.addPublication( newPublication );
+                    System.out.println("Publication added successfully!");
                     break;
                 case 2:
                     System.out.println("Please enter your choice: ");
@@ -141,7 +147,7 @@ public class Main {
                     System.out.println("5. Edit publication edition.");
                     System.out.println("6. Edit publication date.");
                     int choice1 = scanner.nextInt();
-                    switch (choice) {
+                    switch (choice1) {
                         case 1:
                             System.out.println("Enter new author name: ");
                             String newAuthorName = scanner.next();
