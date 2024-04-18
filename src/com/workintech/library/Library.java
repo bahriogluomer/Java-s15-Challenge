@@ -51,7 +51,7 @@ public class Library {
             return;
         }
         publications.removeIf(p -> p.getPublication_ID() == publication_ID);
-        System.out.println("Publication deleted");
+        System.out.println("Publication has been deleted");
     }
 
 
@@ -176,12 +176,12 @@ public class Library {
     }
 
     public void displayPublicationsByAuthor(String fullName) {
-        System.out.println(fullName);
         for(Publication publication : publications) {
             if(publication.getAuthor().getFullName().equalsIgnoreCase(fullName)) {
                 System.out.println(publication);
             }
         }
+        System.out.println("No publication found");
     }
 
     public void displayPublicationsByCategory(Category category) {

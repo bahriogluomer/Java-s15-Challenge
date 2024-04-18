@@ -84,10 +84,11 @@ public class Main {
                     break;
                 case 1:
                     System.out.println("Enter author name: ");
-                    String authorName = scanner.next();
+                    String authorName = scanner.nextLine();
+                    scanner.nextLine();
                     Author newAuthor = new Author(authorName);
                     System.out.println("Enter publication name: ");
-                    String publicationName = scanner.next();
+                    String publicationName = scanner.nextLine();
                     System.out.println("Enter publication price: ");
                     double publicationPrice = scanner.nextDouble();
                     System.out.println("Enter publication category: ");
