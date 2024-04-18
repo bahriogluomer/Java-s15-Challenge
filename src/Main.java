@@ -107,7 +107,9 @@ public class Main {
                     System.out.println("Enter publication date(yyyy-mm-dd): ");
 
                     LocalDate publicationDate = LocalDate.parse(scanner.next());
-                    library.addPublication( new Publication( newAuthor, publicationName, publicationPrice, Category.valueOf(publicationCategory), publicationEdition, publicationDate ));
+                    Publication newPublication = new Publication(newAuthor, publicationName, publicationPrice, Category.valueOf(publicationCategory), publicationEdition, publicationDate);
+                    newAuthor.addPublication(newPublication);
+                    library.addPublication( newPublication );
                     break;
                 case 2:
                     System.out.println("Please enter your choice: ");
